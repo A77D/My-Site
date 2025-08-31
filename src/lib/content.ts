@@ -6,6 +6,12 @@ type Education = {
   year: string;
 };
 
+type NavHeadings = {
+  about: string;
+  skills: string;
+  contact: string;
+}
+
 type Content = {
   name: string;
   title: string;
@@ -26,12 +32,15 @@ type Content = {
   };
   education: Education[];
   headings: {
+    nav: NavHeadings,
     careerAspiration: string;
     skills: string;
     technicalSkills: string;
     softSkills: string;
     education: string;
     generateResume: string;
+    getInTouch: string;
+    viewProjects: string;
   };
   languages: Record<Language, string>;
 };
@@ -39,11 +48,11 @@ type Content = {
 export const content: Record<Language, Content> = {
   en: {
     name: 'Ahmed Jayousi',
-    title: 'Full-Stack Developer',
-    location: 'Dubai, UAE',
+    title: 'Frontend & Mobile Developer',
+    location: 'Tulkarem, Palestine',
     contact: {
-      email: 'ahmed.jayousi@example.com',
-      phone: '+971 50 123 4567',
+      email: 'ahmad20jayyousi@gmail.com',
+      phone: '+970 597 320 456',
     },
     links: {
       linkedin: 'https://www.linkedin.com/in/ahmedjayousi',
@@ -51,9 +60,9 @@ export const content: Record<Language, Content> = {
       linktree: 'https://linktr.ee/ahmedjayousi',
     },
     careerAspiration:
-      'Passionate full-stack developer with a drive for building innovative and high-quality applications. Eager to contribute to dynamic teams, tackle complex challenges, and stay at the forefront of technology.',
+      'Passionate about creating user-friendly applications and innovative digital solutions. Specialized in Flutter, JavaScript, and mobile development.',
     skills: {
-      technical: ['React', 'Next.js', 'Node.js', 'TypeScript', 'GraphQL', 'PostgreSQL', 'Docker', 'AWS'],
+      technical: ['Flutter', 'JavaScript', 'React', 'Next.js', 'Node.js', 'TypeScript', 'GraphQL', 'PostgreSQL', 'Docker', 'AWS'],
       soft: ['Problem Solving', 'Team Collaboration', 'Agile Methodologies', 'Communication', 'Creativity'],
     },
     education: [
@@ -64,12 +73,19 @@ export const content: Record<Language, Content> = {
       },
     ],
     headings: {
+      nav: {
+        about: 'About',
+        skills: 'Skills',
+        contact: 'Contact',
+      },
       careerAspiration: 'Career Aspiration',
       skills: 'Skills',
       technicalSkills: 'Technical Skills',
       softSkills: 'Soft Skills',
       education: 'Education',
       generateResume: 'Generate AI Resume',
+      getInTouch: 'Get In Touch',
+      viewProjects: 'View Projects'
     },
     languages: {
       en: 'English',
@@ -79,11 +95,11 @@ export const content: Record<Language, Content> = {
   },
   ar: {
     name: 'أحمد الجيوسي',
-    title: 'مطور متكامل',
-    location: 'دبي، الإمارات العربية المتحدة',
+    title: 'مطور واجهات أمامية وموبايل',
+    location: 'طولكرم، فلسطين',
     contact: {
-      email: 'ahmed.jayousi@example.com',
-      phone: '+٩٧١ ٥٠ ١٢٣ ٤٥٦٧',
+      email: 'ahmad20jayyousi@gmail.com',
+      phone: '+٩٧٠ ٥٩٧ ٣٢٠ ٤٥٦',
     },
     links: {
       linkedin: 'https://www.linkedin.com/in/ahmedjayousi',
@@ -91,9 +107,9 @@ export const content: Record<Language, Content> = {
       linktree: 'https://linktr.ee/ahmedjayousi',
     },
     careerAspiration:
-      'مطور متكامل شغوف ببناء تطبيقات مبتكرة وعالية الجودة. حريص على المساهمة في فرق ديناميكية، ومواجهة التحديات المعقدة، والبقاء في طليعة التكنولوجيا.',
+      'شغوف بإنشاء تطبيقات سهلة الاستخدام وحلول رقمية مبتكرة. متخصص في Flutter و JavaScript وتطوير الموبايل.',
     skills: {
-      technical: ['React', 'Next.js', 'Node.js', 'TypeScript', 'GraphQL', 'PostgreSQL', 'Docker', 'AWS'],
+      technical: ['Flutter', 'JavaScript', 'React', 'Next.js', 'Node.js', 'TypeScript', 'GraphQL', 'PostgreSQL', 'Docker', 'AWS'],
       soft: ['حل المشاكل', 'التعاون ضمن الفريق', 'المنهجيات الرشيقة', 'التواصل', 'الإبداع'],
     },
     education: [
@@ -104,12 +120,19 @@ export const content: Record<Language, Content> = {
       },
     ],
     headings: {
+      nav: {
+        about: 'حول',
+        skills: 'المهارات',
+        contact: 'اتصل',
+      },
       careerAspiration: 'الطموح الوظيفي',
       skills: 'المهارات',
       technicalSkills: 'المهارات التقنية',
       softSkills: 'المهارات الشخصية',
       education: 'التعليم',
       generateResume: 'إنشاء سيرة ذاتية بالذكاء الاصطناعي',
+      getInTouch: 'تواصل معي',
+      viewProjects: 'عرض المشاريع'
     },
     languages: {
       en: 'English',
@@ -119,11 +142,11 @@ export const content: Record<Language, Content> = {
   },
   de: {
     name: 'Ahmed Jayousi',
-    title: 'Full-Stack-Entwickler',
-    location: 'Dubai, VAE',
+    title: 'Frontend- und Mobil-Entwickler',
+    location: 'Tulkarem, Palästina',
     contact: {
-      email: 'ahmed.jayousi@example.com',
-      phone: '+971 50 123 4567',
+      email: 'ahmad20jayyousi@gmail.com',
+      phone: '+970 597 320 456',
     },
     links: {
       linkedin: 'https://www.linkedin.com/in/ahmedjayousi',
@@ -131,9 +154,9 @@ export const content: Record<Language, Content> = {
       linktree: 'https://linktr.ee/ahmedjayousi',
     },
     careerAspiration:
-      'Leidenschaftlicher Full-Stack-Entwickler mit dem Antrieb, innovative und qualitativ hochwertige Anwendungen zu erstellen. Bestrebt, in dynamischen Teams mitzuwirken, komplexe Herausforderungen zu bewältigen und an der Spitze der Technologie zu bleiben.',
+      'Leidenschaft für die Entwicklung benutzerfreundlicher Anwendungen und innovativer digitaler Lösungen. Spezialisiert auf Flutter, JavaScript und mobile Entwicklung.',
     skills: {
-      technical: ['React', 'Next.js', 'Node.js', 'TypeScript', 'GraphQL', 'PostgreSQL', 'Docker', 'AWS'],
+      technical: ['Flutter', 'JavaScript', 'React', 'Next.js', 'Node.js', 'TypeScript', 'GraphQL', 'PostgreSQL', 'Docker', 'AWS'],
       soft: ['Problemlösung', 'Teamzusammenarbeit', 'Agile Methoden', 'Kommunikation', 'Kreativität'],
     },
     education: [
@@ -144,12 +167,19 @@ export const content: Record<Language, Content> = {
       },
     ],
     headings: {
+      nav: {
+        about: 'Über mich',
+        skills: 'Fähigkeiten',
+        contact: 'Kontakt',
+      },
       careerAspiration: 'Karriereziele',
       skills: 'Fähigkeiten',
       technicalSkills: 'Technische Fähigkeiten',
       softSkills: 'Soft Skills',
       education: 'Ausbildung',
       generateResume: 'KI-Lebenslauf erstellen',
+      getInTouch: 'Kontakt aufnehmen',
+      viewProjects: 'Projekte ansehen'
     },
     languages: {
       en: 'English',

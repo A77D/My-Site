@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 212 78% 12%; /* #0A192F */
+    --background: 205 50% 12%; /* #0F1C2A */
     --foreground: 0 0% 100%; /* #FFFFFF */
-    --card: 215 45% 15%;
+    --card: 205 45% 15%;
     --card-foreground: 0 0% 100%;
-    --popover: 212 78% 10%;
+    --popover: 205 50% 10%;
     --popover-foreground: 0 0% 100%;
-    --primary: 188 100% 50%; /* #00CFFF */
-    --primary-foreground: 212 78% 12%;
-    --secondary: 215 30% 25%;
+    --primary: 195 100% 50%; /* #00BFFF */
+    --primary-foreground: 205 50% 12%;
+    --secondary: 205 30% 25%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 215 30% 25%;
+    --muted: 205 30% 25%;
     --muted-foreground: 0 0% 63%; /* #A0A0A0 */
-    --accent: 215 30% 25%;
+    --accent: 205 30% 25%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
-    --border: 215 30% 25%;
-    --input: 215 30% 25%;
-    --ring: 188 100% 50%;
+    --border: 205 30% 25%;
+    --input: 205 30% 25%;
+    --ring: 195 100% 50%;
     --radius: 0.5rem;
   }
 }
@@ -33,8 +33,22 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-image: linear-gradient(180deg, #0A192F 0%, #0F2027 100%);
+    background: #0f1c2a;
   }
+}
+
+#background-swirl {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23193D4E' stroke-width='1'%3E%3Cpath d='M400 0L400 800'/%3E%3Cpath d='M0 400L800 400'/%3E%3C/g%3E%3Cg fill='%230A2434' %3E%3Ccircle cx='400' cy='400' r='100'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 800px 800px;
+  animation: swirl 50s linear infinite;
+  opacity: 0.1;
+  transform-origin: center;
+  z-index: -1;
 }
 
 #background-dots {
@@ -43,16 +57,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(circle, hsla(var(--primary), 0.15) 1px, transparent 1.5px);
-  background-size: 50px 50px;
-  animation: twinkle 20s infinite linear;
+  background-image: radial-gradient(circle, hsl(var(--primary) / 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
   z-index: -1;
 }
 
-@keyframes twinkle {
-  0% { opacity: 0.2; transform: scale(0.95); }
-  25% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 0.3; transform: scale(0.98); }
-  75% { opacity: 0.6; transform: scale(1.02); }
-  100% { opacity: 0.2; transform: scale(0.95); }
+@keyframes swirl {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
 }
