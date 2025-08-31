@@ -8,6 +8,8 @@ import { GithubIcon, LinktreeIcon } from '@/components/icons';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import React from 'react';
+import { FacebookIcon, InstagramIcon, XIcon, TiktokIcon, ThreadsIcon, SnapchatIcon, DiscordIcon } from '@/components/social-icons';
+
 
 type PageProps = {
   searchParams?: {
@@ -43,6 +45,18 @@ const expertiseIcons: Record<string, React.ElementType> = {
   'Tools & Technologies': Wrench,
 };
 
+const socialLinks = [
+  { name: 'GitHub', icon: GithubIcon, url: 'https://github.com/A77D', gradient: 'from-gray-700 to-gray-900', border: 'border-gray-600/50' },
+  { name: 'LinkedIn', icon: (props: any) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>, url: 'https://www.linkedin.com/in/a7madjay2k/', gradient: 'from-blue-600 to-blue-800', border: 'border-blue-500/50' },
+  { name: 'Facebook', icon: FacebookIcon, url: 'https://web.facebook.com/ahmad.jay2k/', gradient: 'from-blue-500 to-blue-700', border: 'border-blue-400/50' },
+  { name: 'Instagram', icon: InstagramIcon, url: 'https://www.instagram.com/ja.a7mad/', gradient: 'from-pink-500 via-red-500 to-yellow-500', border: 'border-red-500/50' },
+  { name: 'X', icon: XIcon, url: 'https://x.com/a7madjay2k', gradient: 'from-gray-800 to-black', border: 'border-gray-700/50' },
+  { name: 'TikTok', icon: TiktokIcon, url: 'https://www.tiktok.com/@a7mad.jay2k', gradient: 'from-black via-red-500 to-blue-400', border: 'border-gray-500/50' },
+  { name: 'Threads', icon: ThreadsIcon, url: 'https://www.threads.com/@ja.a7mad', gradient: 'from-gray-800 to-black', border: 'border-gray-700/50' },
+  { name: 'Snapchat', icon: SnapchatIcon, url: 'https://www.snapchat.com/add/a7madjay2k', gradient: 'from-yellow-300 to-yellow-500', border: 'border-yellow-400/50' },
+  { name: 'Discord', icon: DiscordIcon, url: 'https://discord.gg/cjBpKjWUyr', gradient: 'from-indigo-600 to-indigo-800', border: 'border-indigo-500/50' },
+];
+
 export default function Home({ searchParams }: PageProps) {
   const lang = searchParams?.lang || 'en';
   const c = content[lang];
@@ -57,6 +71,13 @@ export default function Home({ searchParams }: PageProps) {
 
   return (
     <div dir={dir} className="min-h-screen flex flex-col text-foreground font-body antialiased relative">
+      <svg width="0" height="0" style={{ position: 'absolute' }}>
+        <defs>
+          <clipPath id="squircleClip" clipPathUnits="objectBoundingBox">
+            <path d="M 0,0.5 C 0,0 0,0 0.5,0 S 1,0 1,0.5 1,1 0.5,1 0,1 0,0.5"></path>
+          </clipPath>
+        </defs>
+      </svg>
       <div className="background-container"></div>
       <div className="relative z-10 flex flex-col flex-grow">
         <header className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-sm">
@@ -368,15 +389,23 @@ export default function Home({ searchParams }: PageProps) {
                 </Card>
               </div>
 
-              <Card className="bg-background/50 border-border p-6 text-center">
-                  <CardContent className="p-0 flex flex-col sm:flex-row items-center justify-center gap-4">
-                     <p className="text-muted-foreground flex-grow text-center sm:text-left">{c.headings.socialsPitch}</p>
-                     <Button asChild variant="outline" className="bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--primary))]">
-                       <a href={c.links.linktree} target="_blank" rel="noopener noreferrer">
-                         <LinktreeIcon className="mr-2 h-5 w-5"/>
-                         {c.headings.visitLinktree}
-                       </a>
-                     </Button>
+               <Card className="bg-background/50 border-border p-6">
+                  <CardContent className="p-0 flex flex-col items-center justify-center gap-6">
+                    <p className="text-muted-foreground text-center">{c.headings.socialsPitch}</p>
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-black/20 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl"></div>
+                      <div className="relative flex flex-wrap items-center justify-center gap-2 p-2">
+                        {socialLinks.map((social) => (
+                           <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
+                            <div
+                              className={`squircle-icon-button w-14 h-14 bg-gradient-to-br ${social.gradient} rounded-xl flex items-center justify-center shadow-lg border ${social.border} cursor-pointer transform transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-1 hover:shadow-2xl`}
+                            >
+                              <social.icon className="h-7 w-7 text-white" />
+                            </div>
+                          </a>
+                        ))}
+                      </div>
+                    </div>
                   </CardContent>
               </Card>
 

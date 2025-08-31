@@ -388,4 +388,7 @@
   }
 }
 
+.squircle-icon-button {
+  clip-path: url(#squircleClip);
+}
     
