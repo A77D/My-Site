@@ -1,10 +1,9 @@
 import { Button } from '@/components/ui/button';
-import { Mail, Phone, Briefcase, MapPin, Code, Zap, Globe, ChevronsRight, BrainCircuit, Users, Target, Rocket, GraduationCap, Award, Database, Smartphone, Wrench, MessageCircle, Lightbulb, Zap as ZapIcon, Eye, TrendingUp, Shield, AtSign, Languages as LanguagesIcon, ChevronRight } from 'lucide-react';
+import { Mail, Phone, Briefcase, MapPin, Code, Zap, Globe, ChevronsRight, BrainCircuit, Users, Target, Rocket, GraduationCap, Award, Database, Smartphone, Wrench, MessageCircle, Lightbulb, Zap as ZapIcon, Eye, TrendingUp, Shield, AtSign, Languages as LanguagesIcon, ChevronRight, Send } from 'lucide-react';
 import type { Language, SoftSkill } from '@/lib/content';
 import { content } from '@/lib/content';
 import Link from 'next/link';
 import LanguageSwitcher from '@/components/language-switcher';
-import ResumeGenerator from '@/components/resume-generator';
 import { GithubIcon, LinktreeIcon } from '@/components/icons';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
@@ -99,7 +98,16 @@ export default function Home({ searchParams }: PageProps) {
               <p className="max-w-2xl mx-auto text-muted-foreground leading-relaxed mb-8">{c.aboutMe.summary}</p>
 
               <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-                <ResumeGenerator data={c} buttonText={c.headings.generateResume} />
+                <Button
+                  size="lg"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_20px_hsl(var(--primary))] transition-all duration-300 transform hover:scale-105"
+                  asChild
+                >
+                  <a href="#contact">
+                    <Send className="mr-2" />
+                    {c.headings.getInTouch}
+                  </a>
+                </Button>
                 <Button
                   variant="outline"
                   size="lg"
