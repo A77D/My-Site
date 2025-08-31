@@ -102,7 +102,7 @@ export const content: Record<Language, Content> = {
       responseTime: 'Response time: Usually within 24 hours'
     },
     links: {
-      linkedin: 'https://www.linkedin.com/in/ahmedjayousi',
+      linkedin: 'https://www.linkedin.com/in/a7madjay2k/',
       github: 'https://github.com/A77D',
       linktree: 'https://linktr.ee/ahmedjayousi',
     },
@@ -183,7 +183,7 @@ export const content: Record<Language, Content> = {
       responseTime: 'وقت الاستجابة: عادة في غضون 24 ساعة'
     },
     links: {
-      linkedin: 'https://www.linkedin.com/in/ahmedjayousi',
+      linkedin: 'https://www.linkedin.com/in/a7madjay2k/',
       github: 'https://github.com/A77D',
       linktree: 'https://linktr.ee/ahmedjayousi',
     },
@@ -264,7 +264,7 @@ export const content: Record<Language, Content> = {
       responseTime: 'Antwortzeit: Normalerweise innerhalb von 24 Stunden'
     },
     links: {
-      linkedin: 'https://www.linkedin.com/in/ahmedjayousi',
+      linkedin: 'https://www.linkedin.com/in/a7madjay2k/',
       github: 'https://github.com/A77D',
       linktree: 'https://linktr.ee/ahmedjayousi',
     },
