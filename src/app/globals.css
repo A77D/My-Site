@@ -24,6 +24,7 @@
     --input: 205 30% 25%;
     --ring: 195 100% 50%;
     --radius: 0.5rem;
+    --hue-color: hsl(var(--primary));
   }
 }
 
