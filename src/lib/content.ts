@@ -41,14 +41,19 @@ type Skills = {
   languages: LanguageSkill[];
 }
 
+type ContactContent = {
+  email: string;
+  phone: string;
+  pitch: string;
+  opportunities: string[];
+  responseTime: string;
+}
+
 type Content = {
   name: string;
   title: string;
   location: string;
-  contact: {
-    email: string;
-    phone: string;
-  };
+  contact: ContactContent;
   links: {
     linkedin: string;
     github: string;
@@ -69,6 +74,12 @@ type Content = {
     education: string;
     getInTouch: string;
     viewProjects: string;
+    letsConnect: string;
+    quickActions: string;
+    lookingFor: string;
+    sendMessage: string;
+    socialsPitch: string;
+    visitLinktree: string;
   };
   languages: Record<Language, string>;
 };
@@ -81,6 +92,14 @@ export const content: Record<Language, Content> = {
     contact: {
       email: 'ahmad20jayyousi@gmail.com',
       phone: '+970 597 320 456',
+      pitch: "Ready to collaborate or discuss opportunities? I'd love to hear from you",
+      opportunities: [
+        'Frontend Development',
+        'Mobile App Development',
+        'Full-Stack Development',
+        'Game Development',
+      ],
+      responseTime: 'Response time: Usually within 24 hours'
     },
     links: {
       linkedin: 'https://www.linkedin.com/in/ahmedjayousi',
@@ -133,7 +152,13 @@ export const content: Record<Language, Content> = {
       languages: 'Languages',
       education: 'Education',
       getInTouch: 'Get In Touch',
-      viewProjects: 'View Projects'
+      viewProjects: 'View Projects',
+      letsConnect: "Let's Connect",
+      quickActions: 'Quick Actions',
+      lookingFor: 'Looking for opportunities in:',
+      sendMessage: 'Send Message',
+      socialsPitch: 'Find all my social links and projects in one place',
+      visitLinktree: 'Visit My Linktree',
     },
     languages: {
       en: 'English',
@@ -148,6 +173,14 @@ export const content: Record<Language, Content> = {
     contact: {
       email: 'ahmad20jayyousi@gmail.com',
       phone: '+٩٧٠ ٥٩٧ ٣٢٠ ٤٥٦',
+      pitch: "هل أنت مستعد للتعاون أو مناقشة الفرص؟ أحب أن أسمع منك",
+      opportunities: [
+        'تطوير الواجهات الأمامية',
+        'تطوير تطبيقات الموبايل',
+        'تطوير متكامل',
+        'تطوير الألعاب',
+      ],
+      responseTime: 'وقت الاستجابة: عادة في غضون 24 ساعة'
     },
     links: {
       linkedin: 'https://www.linkedin.com/in/ahmedjayousi',
@@ -200,7 +233,13 @@ export const content: Record<Language, Content> = {
       languages: 'اللغات',
       education: 'التعليم',
       getInTouch: 'تواصل معي',
-      viewProjects: 'عرض المشاريع'
+      viewProjects: 'عرض المشاريع',
+      letsConnect: "دعنا نتواصل",
+      quickActions: 'إجراءات سريعة',
+      lookingFor: 'أبحث عن فرص في:',
+      sendMessage: 'إرسال رسالة',
+      socialsPitch: 'ابحث عن جميع روابطي الاجتماعية ومشاريعي في مكان واحد',
+      visitLinktree: 'زيارة Linktree الخاص بي',
     },
     languages: {
       en: 'English',
@@ -215,6 +254,14 @@ export const content: Record<Language, Content> = {
     contact: {
       email: 'ahmad20jayyousi@gmail.com',
       phone: '+970 597 320 456',
+      pitch: "Bereit zur Zusammenarbeit oder zur Besprechung von Möglichkeiten? Ich würde gerne von Ihnen hören",
+      opportunities: [
+        'Frontend-Entwicklung',
+        'Mobile-App-Entwicklung',
+        'Full-Stack-Entwicklung',
+        'Spieleentwicklung',
+      ],
+      responseTime: 'Antwortzeit: Normalerweise innerhalb von 24 Stunden'
     },
     links: {
       linkedin: 'https://www.linkedin.com/in/ahmedjayousi',
@@ -267,7 +314,13 @@ export const content: Record<Language, Content> = {
       languages: 'Sprachen',
       education: 'Ausbildung',
       getInTouch: 'Kontakt aufnehmen',
-      viewProjects: 'Projekte ansehen'
+      viewProjects: 'Projekte ansehen',
+      letsConnect: "Lass uns verbinden",
+      quickActions: 'Schnelle Aktionen',
+      lookingFor: 'Suche nach Möglichkeiten in:',
+      sendMessage: 'Nachricht senden',
+      socialsPitch: 'Finden Sie alle meine sozialen Links und Projekte an einem Ort',
+      visitLinktree: 'Besuchen Sie mein Linktree',
     },
     languages: {
       en: 'English',

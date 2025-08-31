@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Mail, Phone, Briefcase, MapPin, Code, Zap, Globe, ChevronsRight, BrainCircuit, Users, Target, Rocket, GraduationCap, Award, Database, Smartphone, Wrench, MessageCircle, Lightbulb, Zap as ZapIcon, Eye, TrendingUp, Shield, AtSign, Languages as LanguagesIcon, ChevronRight, Send } from 'lucide-react';
+import { Mail, Phone, Briefcase, MapPin, Code, Zap, Globe, ChevronsRight, BrainCircuit, Users, Target, Rocket, GraduationCap, Award, Database, Smartphone, Wrench, MessageCircle, Lightbulb, Zap as ZapIcon, Eye, TrendingUp, Shield, AtSign, Languages as LanguagesIcon, ChevronRight, Send, ExternalLink, CalendarDays } from 'lucide-react';
 import type { Language, SoftSkill } from '@/lib/content';
 import { content } from '@/lib/content';
 import Link from 'next/link';
@@ -47,6 +47,13 @@ export default function Home({ searchParams }: PageProps) {
   const lang = searchParams?.lang || 'en';
   const c = content[lang];
   const dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+  const contactItems = [
+    { icon: Mail, label: 'Email', value: c.contact.email, href: `mailto:${c.contact.email}` },
+    { icon: Phone, label: 'Phone', value: c.contact.phone, href: `tel:${c.contact.phone}` },
+    { icon: (props: any) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>, label: 'LinkedIn', value: 'ahmedjayousi', href: c.links.linkedin },
+    { icon: GithubIcon, label: 'GitHub', value: 'ahmedjayousi', href: c.links.github },
+  ];
 
   return (
     <div dir={dir} className="min-h-screen flex flex-col text-foreground font-body antialiased relative">
@@ -300,23 +307,79 @@ export default function Home({ searchParams }: PageProps) {
 
           {/* Contact Section */}
           <section id="contact" className="py-24 bg-card/50">
-            <div className="container mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-              <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tight text-primary">{c.headings.getInTouch}</h2>
-              <p className="mt-4 text-lg text-muted-foreground">I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team. Feel free to reach out.</p>
-              <div className="mt-8 flex justify-center">
-                <a href={`mailto:${c.contact.email}`} className="text-2xl font-semibold text-primary hover:underline">{c.contact.email}</a>
+            <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tight text-primary">{c.headings.letsConnect}</h2>
+                <p className="mt-4 text-lg text-muted-foreground">{c.contact.pitch}</p>
               </div>
-              <div className="mt-8 flex justify-center gap-6">
-                <a href={c.links.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                </a>
-                <a href={c.links.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                  <GithubIcon className="h-8 w-8" />
-                </a>
-                <a href={c.links.linktree} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                   <LinktreeIcon className="h-8 w-8" />
-                </a>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                {/* Left Card */}
+                <Card className="bg-background/50 border-border p-6 md:p-8">
+                  <CardHeader className="flex-row items-center gap-4 p-0 mb-6">
+                    <Send className="h-6 w-6 text-primary" />
+                    <CardTitle className="text-xl text-primary">{c.headings.getInTouch}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-0 space-y-6">
+                    {contactItems.map((item, index) => (
+                      <a key={index} href={item.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+                        <div className="bg-primary/10 text-primary p-3 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                          <item.icon className="h-5 w-5" />
+                        </div>
+                        <div className="flex-grow">
+                          <p className="font-semibold text-card-foreground">{item.label}</p>
+                          <p className="text-muted-foreground group-hover:text-primary transition-colors">{item.value}</p>
+                        </div>
+                        <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                      </a>
+                    ))}
+                     <div className="flex items-center gap-4">
+                        <div className="bg-primary/10 text-primary p-3 rounded-lg">
+                          <MapPin className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-card-foreground">{c.location}</p>
+                        </div>
+                      </div>
+                  </CardContent>
+                </Card>
+
+                {/* Right Card */}
+                <Card className="bg-background/50 border-border p-6 md:p-8">
+                   <CardHeader className="flex-row items-center gap-4 p-0 mb-6">
+                    <CalendarDays className="h-6 w-6 text-primary" />
+                    <CardTitle className="text-xl text-primary">{c.headings.quickActions}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-0 space-y-6">
+                     <div className="bg-card p-4 rounded-lg">
+                        <h4 className="font-semibold text-card-foreground mb-3">{c.headings.lookingFor}</h4>
+                        <ul className="space-y-2 text-muted-foreground list-disc list-inside">
+                          {c.contact.opportunities.map((opp, i) => <li key={i}>{opp}</li>)}
+                        </ul>
+                      </div>
+                      <Button asChild size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_20px_hsl(var(--primary))] transition-all duration-300">
+                        <a href={`mailto:${c.contact.email}`}>
+                          <Mail className="mr-2 h-4 w-4" />
+                          {c.headings.sendMessage}
+                        </a>
+                      </Button>
+                      <p className="text-center text-sm text-muted-foreground">{c.contact.responseTime}</p>
+                  </CardContent>
+                </Card>
               </div>
+
+              <Card className="bg-background/50 border-border p-6 text-center">
+                  <CardContent className="p-0 flex flex-col sm:flex-row items-center justify-center gap-4">
+                     <p className="text-muted-foreground flex-grow text-center sm:text-left">{c.headings.socialsPitch}</p>
+                     <Button asChild variant="outline" className="bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--primary))]">
+                       <a href={c.links.linktree} target="_blank" rel="noopener noreferrer">
+                         <LinktreeIcon className="mr-2 h-5 w-5"/>
+                         {c.headings.visitLinktree}
+                       </a>
+                     </Button>
+                  </CardContent>
+              </Card>
+
             </div>
           </section>
         </main>
@@ -328,5 +391,3 @@ export default function Home({ searchParams }: PageProps) {
     </div>
   );
 }
-
-    
