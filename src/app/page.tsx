@@ -224,25 +224,37 @@ export default function Home({ searchParams }: PageProps) {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card>
-                <CardHeader className="flex-row items-center gap-4">
-                  <Users className="h-8 w-8 text-primary"/>
-                  <CardTitle className="text-primary text-xl font-bold">{c.headings.softSkills}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4">
-                    {c.skills.soft.map((skill, index) => {
-                      const Icon = softSkillIcons[skill.name];
-                      return (
-                        <div key={index} className="flex items-center gap-3">
-                          {Icon && <Icon className="h-6 w-6 text-primary" />}
-                          <span className="font-medium">{skill.name}</span>
-                        </div>
-                      )
-                    })}
+              <div className="skill-card-large">
+                <div className="skill-card-content">
+                  <div className="back">
+                    <div className="back-content">
+                      <Users className="h-10 w-10 text-primary mb-2" />
+                      <strong className="text-xl font-bold">{c.headings.softSkills}</strong>
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
+                  <div className="front">
+                    <div className="front-content p-6">
+                      <CardHeader className="flex-row items-center gap-4 space-y-0 p-0 mb-4">
+                        <Users className="h-8 w-8 text-primary"/>
+                        <CardTitle className="text-primary text-lg font-bold">{c.headings.softSkills}</CardTitle>
+                      </CardHeader>
+                      <CardContent className="p-0">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4">
+                          {c.skills.soft.map((skill, index) => {
+                            const Icon = softSkillIcons[skill.name];
+                            return (
+                              <div key={index} className="flex items-center gap-3">
+                                {Icon && <Icon className="h-6 w-6 text-primary" />}
+                                <span className="font-medium">{skill.name}</span>
+                              </div>
+                            )
+                          })}
+                        </div>
+                      </CardContent>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <div className="skill-card-large">
                 <div className="skill-card-content">
