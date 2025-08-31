@@ -103,7 +103,7 @@ export const content: Record<Language, Content> = {
     },
     links: {
       linkedin: 'https://www.linkedin.com/in/ahmedjayousi',
-      github: 'https://github.com/ahmedjayousi',
+      github: 'https://github.com/A77D',
       linktree: 'https://linktr.ee/ahmedjayousi',
     },
     aboutMe: {
@@ -184,7 +184,7 @@ export const content: Record<Language, Content> = {
     },
     links: {
       linkedin: 'https://www.linkedin.com/in/ahmedjayousi',
-      github: 'https://github.com/ahmedjayousi',
+      github: 'https://github.com/A77D',
       linktree: 'https://linktr.ee/ahmedjayousi',
     },
     aboutMe: {
@@ -265,7 +265,7 @@ export const content: Record<Language, Content> = {
     },
     links: {
       linkedin: 'https://www.linkedin.com/in/ahmedjayousi',
-      github: 'https://github.com/ahmedjayousi',
+      github: 'https://github.com/A77D',
       linktree: 'https://linktr.ee/ahmedjayousi',
     },
     aboutMe: {
