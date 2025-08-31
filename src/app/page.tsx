@@ -28,11 +28,11 @@ const softSkillIcons: Record<SoftSkill['name'], React.ElementType> = {
   'Fast Learning': ZapIcon,
   'Creative Thinking': BrainCircuit,
   'Detail-Oriented': Eye,
-  Adaptable: Globe,
-  Curious: AtSign,
-  Motivated: Rocket,
-  Analytical: TrendingUp,
-  Resilient: Shield,
+  'Adaptable': Globe,
+  'Curious': AtSign,
+  'Motivated': Rocket,
+  'Analytical': TrendingUp,
+  'Resilient': Shield,
   'Goal-Driven': Target,
 };
 
@@ -224,37 +224,25 @@ export default function Home({ searchParams }: PageProps) {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="skill-card-large">
-                <div className="skill-card-content">
-                  <div className="back">
-                    <div className="back-content">
-                      <Users className="h-10 w-10 text-primary mb-2" />
-                      <strong className="text-xl font-bold text-center">{c.headings.softSkills}</strong>
-                    </div>
-                  </div>
-                  <div className="front">
-                    <div className="front-content p-6">
-                      <CardHeader className="flex-row items-center gap-4 space-y-0 p-0 mb-4">
-                          <Users className="h-8 w-8 text-primary"/>
-                          <CardTitle className="text-primary text-lg font-bold">{c.headings.softSkills}</CardTitle>
-                      </CardHeader>
-                      <CardContent className="p-0">
-                        <div className="flex flex-wrap gap-3">
-                          {c.skills.soft.map((skill, index) => {
-                            const Icon = softSkillIcons[skill.name];
-                            return(
-                              <div key={index} className="flex items-center gap-2 bg-background/50 border border-border rounded-full px-3 py-1.5 text-sm text-muted-foreground">
-                                {Icon && <Icon className="h-5 w-5 text-primary"/>}
-                                <span>{skill.name}</span>
-                              </div>
-                            )
-                          })}
+              <Card>
+                <CardHeader className="flex-row items-center gap-4">
+                  <Users className="h-8 w-8 text-primary"/>
+                  <CardTitle className="text-primary text-xl font-bold">{c.headings.softSkills}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4">
+                    {c.skills.soft.map((skill, index) => {
+                      const Icon = softSkillIcons[skill.name];
+                      return (
+                        <div key={index} className="flex items-center gap-3">
+                          {Icon && <Icon className="h-6 w-6 text-primary" />}
+                          <span className="font-medium">{skill.name}</span>
                         </div>
-                      </CardContent>
-                    </div>
+                      )
+                    })}
                   </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
 
               <div className="skill-card-large">
                 <div className="skill-card-content">
