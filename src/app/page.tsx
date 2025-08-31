@@ -8,7 +8,7 @@ import { GithubIcon, LinktreeIcon } from '@/components/icons';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import React from 'react';
-import { FacebookIcon, InstagramIcon, XIcon, TiktokIcon, ThreadsIcon, SnapchatIcon, DiscordIcon } from '@/components/social-icons';
+import { FacebookIcon, InstagramIcon, XIcon, DiscordIcon } from '@/components/social-icons';
 
 
 type PageProps = {
