@@ -74,6 +74,13 @@
   perspective: 1000px;
 }
 
+.skill-card-large {
+  overflow: visible;
+  width: 100%;
+  height: 280px;
+  perspective: 1000px;
+}
+
 .skill-card-content {
   width: 100%;
   height: 100%;
@@ -82,11 +89,13 @@
   border-radius: 0.5rem;
 }
 
-.skill-card:hover .skill-card-content {
+.skill-card:hover .skill-card-content,
+.skill-card-large:hover .skill-card-content {
   transform: rotateY(180deg);
 }
 
-.skill-card .front, .skill-card .back {
+.skill-card .front, .skill-card .back,
+.skill-card-large .front, .skill-card-large .back {
   background-color: hsl(var(--card));
   position: absolute;
   width: 100%;
@@ -98,7 +107,8 @@
   border: 1px solid hsl(var(--border));
 }
 
-.skill-card .back {
+.skill-card .back,
+.skill-card-large .back {
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -107,7 +117,8 @@
   overflow: hidden;
 }
 
-.skill-card .back::before {
+.skill-card .back::before,
+.skill-card-large .back::before {
   position: absolute;
   content: ' ';
   display: block;
@@ -128,7 +139,8 @@
   }
 }
 
-.skill-card .back-content {
+.skill-card .back-content,
+.skill-card-large .back-content {
   position: absolute;
   width: calc(100% - 4px);
   height: calc(100% - 4px);
@@ -144,12 +156,14 @@
 }
 
 
-.skill-card .front {
+.skill-card .front,
+.skill-card-large .front {
   transform: rotateY(180deg);
   color: hsl(var(--card-foreground));
 }
 
-.skill-card .front .front-content {
+.skill-card .front .front-content,
+.skill-card-large .front .front-content {
   position: absolute;
   width: 100%;
   height: 100%;

@@ -224,46 +224,70 @@ export default function Home({ searchParams }: PageProps) {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-               <Card className="bg-card/50 border-border/50">
-                  <CardHeader className="flex-row items-center gap-4 space-y-0">
-                    <Users className="h-8 w-8 text-primary"/>
-                    <CardTitle className="text-primary text-lg font-bold">{c.headings.softSkills}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-4">
-                      {c.skills.soft.map((skill, index) => {
-                        const Icon = softSkillIcons[skill.name];
-                        return(
-                          <div key={index} className="flex items-center gap-2 bg-background/50 border border-border rounded-full px-4 py-2 text-sm text-muted-foreground">
-                            {Icon && <Icon className="h-5 w-5 text-primary"/>}
-                            <span>{skill.name}</span>
-                          </div>
-                        )
-                      })}
+              <div className="skill-card-large">
+                <div className="skill-card-content">
+                  <div className="back">
+                    <div className="back-content">
+                      <Users className="h-10 w-10 text-primary mb-2" />
+                      <strong className="text-xl font-bold text-center">{c.headings.softSkills}</strong>
                     </div>
-                  </CardContent>
-               </Card>
-               <Card className="bg-card/50 border-border/50">
-                  <CardHeader className="flex-row items-center gap-4 space-y-0">
-                    <LanguagesIcon className="h-8 w-8 text-primary"/>
-                    <CardTitle className="text-primary text-lg font-bold">{c.headings.languages}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                      <ul className="space-y-4">
-                        {c.skills.languages.map((lang, index) => (
-                          <li key={index}>
-                            <div className="flex justify-between items-center mb-1">
-                              <span className="font-semibold text-card-foreground">{lang.name}</span>
-                              <span className="text-sm text-muted-foreground">{lang.level}</span>
-                            </div>
-                            <Progress value={lang.proficiency} className="h-2 [&>div]:bg-primary" />
-                          </li>
-                        ))}
-                      </ul>
-                  </CardContent>
-               </Card>
-            </div>
+                  </div>
+                  <div className="front">
+                    <div className="front-content p-6">
+                      <CardHeader className="flex-row items-center gap-4 space-y-0 p-0 mb-4">
+                          <Users className="h-8 w-8 text-primary"/>
+                          <CardTitle className="text-primary text-lg font-bold">{c.headings.softSkills}</CardTitle>
+                      </CardHeader>
+                      <CardContent className="p-0">
+                        <div className="flex flex-wrap gap-3">
+                          {c.skills.soft.map((skill, index) => {
+                            const Icon = softSkillIcons[skill.name];
+                            return(
+                              <div key={index} className="flex items-center gap-2 bg-background/50 border border-border rounded-full px-3 py-1.5 text-sm text-muted-foreground">
+                                {Icon && <Icon className="h-5 w-5 text-primary"/>}
+                                <span>{skill.name}</span>
+                              </div>
+                            )
+                          })}
+                        </div>
+                      </CardContent>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
+              <div className="skill-card-large">
+                <div className="skill-card-content">
+                  <div className="back">
+                    <div className="back-content">
+                      <LanguagesIcon className="h-10 w-10 text-primary mb-2" />
+                      <strong className="text-xl font-bold text-center">{c.headings.languages}</strong>
+                    </div>
+                  </div>
+                  <div className="front">
+                    <div className="front-content p-6">
+                      <CardHeader className="flex-row items-center gap-4 space-y-0 p-0 mb-4">
+                        <LanguagesIcon className="h-8 w-8 text-primary"/>
+                        <CardTitle className="text-primary text-lg font-bold">{c.headings.languages}</CardTitle>
+                      </CardHeader>
+                      <CardContent className="p-0">
+                        <ul className="space-y-4">
+                          {c.skills.languages.map((lang, index) => (
+                            <li key={index}>
+                              <div className="flex justify-between items-center mb-1">
+                                <span className="font-semibold text-card-foreground">{lang.name}</span>
+                                <span className="text-sm text-muted-foreground">{lang.level}</span>
+                              </div>
+                              <Progress value={lang.proficiency} className="h-2 [&>div]:bg-primary" />
+                            </li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
