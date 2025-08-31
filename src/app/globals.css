@@ -144,6 +144,18 @@
   justify-content: space-between;
 }
 
+.skill-card .back-content svg,
+.skill-card-large .back-content svg {
+  color: var(--hue-color);
+  animation: color_anim 10s infinite linear;
+}
+
+.skill-card .back-content strong,
+.skill-card-large .back-content strong {
+  color: var(--hue-color);
+  animation: color_anim 10s infinite linear;
+}
+
 .background-container {
   position: fixed;
   width: 100vw;
@@ -345,3 +357,5 @@
       426.5px 6480px;
   }
 }
+
+    

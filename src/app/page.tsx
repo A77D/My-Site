@@ -205,7 +205,7 @@ export default function Home({ searchParams }: PageProps) {
                       <div className="skill-card-content">
                         <div className="back">
                           <div className="back-content">
-                            {Icon && <Icon className="h-10 w-10 text-primary mb-2" />}
+                            {Icon && <Icon className="h-10 w-10 mb-2" />}
                             <strong className="text-xl font-bold text-center">{exp.title}</strong>
                           </div>
                         </div>
@@ -235,7 +235,7 @@ export default function Home({ searchParams }: PageProps) {
                   <div className="skill-card-content">
                     <div className="back">
                       <div className="back-content">
-                        <Users className="h-10 w-10 text-primary mb-2" />
+                        <Users className="h-10 w-10 mb-2" />
                         <strong className="text-xl font-bold">{c.headings.softSkills}</strong>
                       </div>
                     </div>
@@ -267,7 +267,7 @@ export default function Home({ searchParams }: PageProps) {
                   <div className="skill-card-content">
                     <div className="back">
                       <div className="back-content">
-                        <LanguagesIcon className="h-10 w-10 text-primary mb-2" />
+                        <LanguagesIcon className="h-10 w-10 mb-2" />
                         <strong className="text-xl font-bold text-center">{c.headings.languages}</strong>
                       </div>
                     </div>
@@ -328,3 +328,5 @@ export default function Home({ searchParams }: PageProps) {
     </div>
   );
 }
+
+    
