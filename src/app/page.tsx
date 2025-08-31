@@ -51,9 +51,6 @@ const socialLinks = [
   { name: 'Facebook', icon: FacebookIcon, url: 'https://web.facebook.com/ahmad.jay2k/', gradient: 'from-blue-500 to-blue-700', border: 'border-blue-400/50' },
   { name: 'Instagram', icon: InstagramIcon, url: 'https://www.instagram.com/ja.a7mad/', gradient: 'from-pink-500 via-red-500 to-yellow-500', border: 'border-red-500/50' },
   { name: 'X', icon: XIcon, url: 'https://x.com/a7madjay2k', gradient: 'from-gray-800 to-black', border: 'border-gray-700/50' },
-  { name: 'TikTok', icon: TiktokIcon, url: 'https://www.tiktok.com/@a7mad.jay2k', gradient: 'from-black via-red-500 to-blue-400', border: 'border-gray-500/50' },
-  { name: 'Threads', icon: ThreadsIcon, url: 'https://www.threads.com/@ja.a7mad', gradient: 'from-gray-800 to-black', border: 'border-gray-700/50' },
-  { name: 'Snapchat', icon: SnapchatIcon, url: 'https://www.snapchat.com/add/a7madjay2k', gradient: 'from-yellow-300 to-yellow-500', border: 'border-yellow-400/50' },
   { name: 'Discord', icon: DiscordIcon, url: 'https://discord.gg/cjBpKjWUyr', gradient: 'from-indigo-600 to-indigo-800', border: 'border-indigo-500/50' },
 ];
 
