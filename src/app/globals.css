@@ -94,10 +94,11 @@
   display: block;
   width: 160px;
   height: 160%;
-  background: linear-gradient(90deg, transparent, hsl(var(--primary)), hsl(var(--primary)), hsl(var(--primary)), hsl(var(--primary)), transparent);
-  animation: rotation_481 5000ms infinite linear;
+  background: linear-gradient(90deg, transparent, var(--hue-color), var(--hue-color), var(--hue-color), var(--hue-color), transparent);
+  animation: rotation_481 5000ms infinite linear, color_anim 10s infinite linear;
   opacity: 0.7;
 }
+
 
 @keyframes rotation_481 {
   0% {
@@ -147,7 +148,7 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  --c: hsl(var(--primary));
+  --c: var(--hue-color);
   background-color: #000;
   background-image: radial-gradient(4px 100px at 0px 235px, var(--c), #0000),
     radial-gradient(4px 100px at 300px 235px, var(--c), #0000),
@@ -222,7 +223,7 @@
     300px 210px,
     300px 210px,
     300px 210px;
-  animation: rain-anim 150s linear infinite;
+  animation: rain-anim 150s linear infinite, color_anim 10s linear infinite;
   z-index: -1;
 }
 
@@ -248,6 +249,18 @@
   }
   to {
     backdrop-filter: var(--f) hue-rotate(360deg);
+  }
+}
+
+@keyframes color_anim {
+  0% {
+    --hue-color: hsl(195, 100%, 50%);
+  }
+  50% {
+    --hue-color: hsl(280, 100%, 50%);
+  }
+  100% {
+    --hue-color: hsl(195, 100%, 50%);
   }
 }
 
