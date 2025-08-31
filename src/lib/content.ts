@@ -16,9 +16,9 @@ type NavHeadings = {
 type AboutMe = {
   summary: string;
   passion: string;
-  p1: string;
-  p2: string;
-  p3: string;
+  p1?: string;
+  p2?: string;
+  p3?: string;
 }
 
 export type SoftSkill = {
@@ -92,9 +92,6 @@ export const content: Record<Language, Content> = {
     aboutMe: {
       summary: 'Recent graduate with a passion for innovation and a commitment to technical excellence.',
       passion: 'Passionate about creating user-friendly applications and innovative digital solutions. Specialized in Flutter, JavaScript, and mobile development.',
-      p1: "Recent graduate in Applied Computing with a strong foundation in programming languages and software concepts.",
-      p2: "I'm passionate about mobile programming and game development, with a focus on user-friendly applications and innovative digital solutions.",
-      p3: "Enthusiastic about lifelong learning and staying at the forefront of technological advancements, looking to contribute to innovative teams and make a meaningful impact in the tech industry.",
     },
     careerAspiration:
       'To become a proficient programmer, delivering high-quality applications and creative solutions that combine technical excellence with user-centric design.',
@@ -163,9 +160,6 @@ export const content: Record<Language, Content> = {
     aboutMe: {
         summary: 'خريج حديث شغوف بالابتكار وملتزم بالتميز التقني.',
         passion: 'شغوف بإنشاء تطبيقات سهلة الاستخدام وحلول رقمية مبتكرة. متخصص في Flutter و JavaScript وتطوير الموبايل.',
-        p1: "خريج حديث في الحوسبة التطبيقية مع أساس قوي في لغات البرمجة ومفاهيم البرمجيات.",
-        p2: "أنا متحمس لبرمجة الموبايل وتطوير الألعاب ، مع التركيز على التطبيقات سهلة الاستخدام والحلول الرقمية المبتكرة.",
-        p3: "متحمس للتعلم مدى الحياة والبقاء في طليعة التطورات التكنولوجية ، وأتطلع إلى المساهمة في فرق مبتكرة وإحداث تأثير هادف في صناعة التكنولوجيا.",
     },
     careerAspiration:
       'أن أصبح مبرمجًا محترفًا ، وأقدم تطبيقات عالية الجودة وحلولًا إبداعية تجمع بين التميز التقني والتصميم المرتكز على المستخدم.',
@@ -234,9 +228,6 @@ export const content: Record<Language, Content> = {
     aboutMe: {
         summary: 'Absolvent mit einer Leidenschaft für Innovation und einem Bekenntnis zu technischer Exzellenz.',
         passion: 'Leidenschaft für die Entwicklung benutzerfreundlicher Anwendungen und innovativer digitaler Lösungen. Spezialisiert auf Flutter, JavaScript und mobile Entwicklung.',
-        p1: "Absolvent der Angewandten Informatik mit einer soliden Grundlage in Programmiersprachen und Softwarekonzepten.",
-        p2: "Ich begeistere mich für mobile Programmierung und Spieleentwicklung mit Fokus auf benutzerfreundliche Anwendungen und innovative digitale Lösungen.",
-        p3: "Begeistert vom lebenslangen Lernen und dem Bleiben an der Spitze der technologischen Fortschritte, möchte ich zu innovativen Teams beitragen und einen bedeutenden Einfluss auf die Tech-Branche ausüben.",
     },
     careerAspiration:
       'Ein kompetenter Programmierer zu werden, der hochwertige Anwendungen und kreative Lösungen liefert, die technische Exzellenz mit benutzerzentriertem Design verbinden.',

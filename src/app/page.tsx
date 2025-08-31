@@ -137,9 +137,9 @@ export default function Home({ searchParams }: PageProps) {
 
               <div className="grid md:grid-cols-5 gap-8">
                 <div className="md:col-span-3 text-lg text-muted-foreground space-y-6">
-                  <p>{c.aboutMe.p1}</p>
-                  <p>{c.aboutMe.p2}</p>
-                  <p>{c.aboutMe.p3}</p>
+                   <p>Recent graduate in <span className="text-primary">Applied Computing</span> with a strong foundation in programming languages and software concepts.</p>
+                  <p>I'm passionate about <span className="text-primary">mobile programming and game development</span>, with a focus on user-friendly applications and innovative digital solutions.</p>
+                  <p>Enthusiastic about <span className="text-primary">lifelong learning</span> and staying at the forefront of technological advancements, looking to contribute to <span className="text-primary">innovative teams</span> and make a meaningful impact in the tech industry.</p>
                 </div>
 
                 <div className="md:col-span-2 space-y-8">
@@ -171,7 +171,7 @@ export default function Home({ searchParams }: PageProps) {
                       <CardTitle className="text-primary">{c.headings.careerAspiration}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground">{c.careerAspiration}</p>
+                      <p className="text-muted-foreground">To become a <span className="text-primary">proficient programmer</span>, delivering high-quality applications and creative solutions that combine <span className="text-primary">technical excellence</span> with <span className="text-primary">user-centric design</span>.</p>
                     </CardContent>
                   </Card>
                 </div>
@@ -233,8 +233,6 @@ export default function Home({ searchParams }: PageProps) {
                     </div>
                     <div className="front">
                       <div className="front-content p-6">
-                        <CardHeader className="flex-row items-center gap-4 space-y-0 p-0 mb-4">
-                        </CardHeader>
                         <CardContent className="p-0">
                           <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4">
                             {c.skills.soft.map((skill, index) => {
