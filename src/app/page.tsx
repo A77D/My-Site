@@ -7,6 +7,7 @@ import LanguageSwitcher from '@/components/language-switcher';
 import { GithubIcon, LinktreeIcon } from '@/components/icons';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
+import React from 'react';
 
 type PageProps = {
   searchParams?: {
@@ -103,7 +104,7 @@ export default function Home({ searchParams }: PageProps) {
                   className="bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_20px_hsl(var(--primary))] transition-all duration-300 transform hover:scale-105"
                   asChild
                 >
-                  <a href="#about">
+                  <a href="#contact">
                     <Send className="mr-2" />
                     {c.headings.getInTouch}
                   </a>

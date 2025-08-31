@@ -67,7 +67,6 @@ type Content = {
     softSkills: string;
     languages: string;
     education: string;
-    generateResume: string;
     getInTouch: string;
     viewProjects: string;
   };
@@ -133,7 +132,6 @@ export const content: Record<Language, Content> = {
       softSkills: 'Soft Skills',
       languages: 'Languages',
       education: 'Education',
-      generateResume: 'Generate AI Resume',
       getInTouch: 'Get In Touch',
       viewProjects: 'View Projects'
     },
@@ -201,7 +199,6 @@ export const content: Record<Language, Content> = {
       softSkills: 'المهارات الشخصية',
       languages: 'اللغات',
       education: 'التعليم',
-      generateResume: 'إنشاء سيرة ذاتية بالذكاء الاصطناعي',
       getInTouch: 'تواصل معي',
       viewProjects: 'عرض المشاريع'
     },
@@ -269,7 +266,6 @@ export const content: Record<Language, Content> = {
       softSkills: 'Soft Skills',
       languages: 'Sprachen',
       education: 'Ausbildung',
-      generateResume: 'KI-Lebenslauf erstellen',
       getInTouch: 'Kontakt aufnehmen',
       viewProjects: 'Projekte ansehen'
     },
