@@ -632,7 +632,7 @@
   background: #0005;
   border-radius: inherit;
   clip-path: path(
-    "M 90 0 C 121 0 126 5 126 33 C 126 61 121 66 90 66 L 33 66 C 5 66 0 61 0 33 C 0 5 5 0 33 0 Z"
+    "M 120 0 C 151 0 156 5 156 22 C 156 39 151 44 120 44 L 33 44 C 5 44 0 39 0 22 C 0 5 5 0 33 0 Z"
   );
 }
 
@@ -642,21 +642,21 @@
   border: none;
   border-radius: 0.875em;
   clip-path: path(
-    "M 90 0 C 115 0 120 5 120 30 C 120 55 115 60 90 60 L 30 60 C 5 60 0 55 0 30 C 0 5 5 0 30 0 Z"
+    "M 120 0 C 145 0 150 5 150 20 C 150 35 145 40 120 40 L 30 40 C 5 40 0 35 0 20 C 0 5 5 0 30 0 Z"
   );
-  width: 120px;
-  height: 60px;
+  width: 150px;
+  height: 44px;
   background: #111215;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   color: #fff;
   overflow: hidden;
 }
 
 .new-real-button {
   position: absolute;
-  width: 120px;
-  height: 60px;
+  width: 150px;
+  height: 44px;
   z-index: 1;
   outline: none;
   border: none;
