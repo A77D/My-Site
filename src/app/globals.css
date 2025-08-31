@@ -37,6 +37,36 @@
   }
 }
 
+@keyframes animated-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-text {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--primary)),
+    #973BED,
+    #FFC800,
+    #F0F,
+    #00E0ED,
+    hsl(var(--primary))
+  );
+  background-size: 300% 300%;
+  animation: animated-gradient 8s ease-in-out infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 .skill-card {
   overflow: visible;
   width: 220px;

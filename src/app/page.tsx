@@ -90,7 +90,7 @@ export default function Home({ searchParams }: PageProps) {
               </div>
 
               <h1 className="font-headline text-5xl md:text-7xl font-black tracking-tighter mb-4">
-                <span className="bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">
+                <span className="animated-text">
                   {c.name}
                 </span>
               </h1>
