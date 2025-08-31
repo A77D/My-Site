@@ -19,7 +19,27 @@ type AboutMe = {
   p1: string;
   p2: string;
   p3: string;
-  attributes: string[];
+}
+
+export type SoftSkill = {
+  name: string;
+}
+
+type Expertise = {
+  title: string;
+  items: string[];
+}
+
+type LanguageSkill = {
+  name: string;
+  level: string;
+  proficiency: number;
+}
+
+type Skills = {
+  expertise: Expertise[];
+  soft: SoftSkill[];
+  languages: LanguageSkill[];
 }
 
 type Content = {
@@ -37,17 +57,16 @@ type Content = {
   };
   aboutMe: AboutMe;
   careerAspiration: string;
-  skills: {
-    technical: string[];
-    soft: string[];
-  };
+  skills: Skills;
   education: Education[];
   headings: {
-    nav: NavHeadings,
+    nav: NavHeadings;
+    about: string;
     careerAspiration: string;
     skills: string;
-    technicalSkills: string;
+    skillsSubheading: string;
     softSkills: string;
+    languages: string;
     education: string;
     generateResume: string;
     getInTouch: string;
@@ -76,13 +95,27 @@ export const content: Record<Language, Content> = {
       p1: "Recent graduate in Applied Computing with a strong foundation in programming languages and software concepts.",
       p2: "I'm passionate about mobile programming and game development, with a focus on user-friendly applications and innovative digital solutions.",
       p3: "Enthusiastic about lifelong learning and staying at the forefront of technological advancements, looking to contribute to innovative teams and make a meaningful impact in the tech industry.",
-      attributes: ["Problem Solver", "Fast Learner", "Team Player", "Creative Thinker", "Detail-Oriented", "Adaptable", "Curious", "Motivated", "Analytical", "Resilient", "Open-Minded", "Goal-Driven"]
     },
     careerAspiration:
       'To become a proficient programmer, delivering high-quality applications and creative solutions that combine technical excellence with user-centric design.',
     skills: {
-      technical: ['Flutter', 'JavaScript', 'React', 'Next.js', 'Node.js', 'TypeScript', 'GraphQL', 'PostgreSQL', 'Docker', 'AWS'],
-      soft: ['Problem Solving', 'Team Collaboration', 'Agile Methodologies', 'Communication', 'Creativity'],
+      expertise: [
+        { title: 'Frontend Development', items: ['HTML', 'CSS', 'JavaScript', 'Flutter', 'Responsive Design'] },
+        { title: 'Backend & Programming', items: ['PHP', 'Java', 'Python', 'Laravel', 'C++', 'C#'] },
+        { title: 'Mobile Development', items: ['Flutter (Dart)', 'Android Studio (Java)', 'Cross-Platform Apps'] },
+        { title: 'Tools & Technologies', items: ['Git', 'Cisco Packet Tracer', 'MS Office', 'Ethernet Wiring'] },
+      ],
+      soft: [
+        { name: 'Team Collaboration' }, { name: 'Clear Communication' }, { name: 'Problem Solving' },
+        { name: 'Fast Learning' }, { name: 'Creative Thinking' }, { name: 'Detail-Oriented' },
+        { name: 'Adaptable' }, { name: 'Curious' }, { name: 'Motivated' },
+        { name: 'Analytical' }, { name: 'Resilient' }, { name: 'Goal-Driven' }
+      ],
+      languages: [
+        { name: 'Arabic', level: 'Native', proficiency: 100 },
+        { name: 'English', level: 'Advanced', proficiency: 85 },
+        { name: 'German', level: 'Beginner', proficiency: 20 },
+      ],
     },
     education: [
       {
@@ -97,10 +130,12 @@ export const content: Record<Language, Content> = {
         skills: 'Skills',
         contact: 'Contact',
       },
+      about: 'About Me',
       careerAspiration: 'Career Aspiration',
-      skills: 'Skills',
-      technicalSkills: 'Technical Skills',
+      skills: 'Skills & Expertise',
+      skillsSubheading: 'A comprehensive toolkit for modern software development',
       softSkills: 'Soft Skills',
+      languages: 'Languages',
       education: 'Education',
       generateResume: 'Generate AI Resume',
       getInTouch: 'Get In Touch',
@@ -131,13 +166,27 @@ export const content: Record<Language, Content> = {
         p1: "خريج حديث في الحوسبة التطبيقية مع أساس قوي في لغات البرمجة ومفاهيم البرمجيات.",
         p2: "أنا متحمس لبرمجة الموبايل وتطوير الألعاب ، مع التركيز على التطبيقات سهلة الاستخدام والحلول الرقمية المبتكرة.",
         p3: "متحمس للتعلم مدى الحياة والبقاء في طليعة التطورات التكنولوجية ، وأتطلع إلى المساهمة في فرق مبتكرة وإحداث تأثير هادف في صناعة التكنولوجيا.",
-        attributes: ["حل المشاكل", "متعلم سريع", "لاعب فريق", "مفكر مبدع", "موجه نحو التفاصيل", "قابل للتكيف", "فضولي", "متحفز", "تحليلي", "مرن", "منفتح", "موجه نحو الهدف"]
     },
     careerAspiration:
       'أن أصبح مبرمجًا محترفًا ، وأقدم تطبيقات عالية الجودة وحلولًا إبداعية تجمع بين التميز التقني والتصميم المرتكز على المستخدم.',
     skills: {
-      technical: ['Flutter', 'JavaScript', 'React', 'Next.js', 'Node.js', 'TypeScript', 'GraphQL', 'PostgreSQL', 'Docker', 'AWS'],
-      soft: ['حل المشاكل', 'التعاون ضمن الفريق', 'المنهجيات الرشيقة', 'التواصل', 'الإبداع'],
+      expertise: [
+        { title: 'تطوير الواجهات الأمامية', items: ['HTML', 'CSS', 'JavaScript', 'Flutter', 'تصميم متجاوب'] },
+        { title: 'البرمجة والخلفية', items: ['PHP', 'Java', 'Python', 'Laravel', 'C++', 'C#'] },
+        { title: 'تطوير الموبايل', items: ['Flutter (Dart)', 'Android Studio (Java)', 'تطبيقات متعددة المنصات'] },
+        { title: 'الأدوات والتقنيات', items: ['Git', 'Cisco Packet Tracer', 'MS Office', 'Ethernet Wiring'] },
+      ],
+      soft: [
+        { name: 'التعاون ضمن الفريق' }, { name: 'تواصل واضح' }, { name: 'حل المشاكل' },
+        { name: 'تعلم سريع' }, { name: 'تفكير إبداعي' }, { name: 'موجه نحو التفاصيل' },
+        { name: 'قابل للتكيف' }, { name: 'فضولي' }, { name: 'متحفز' },
+        { name: 'تحليلي' }, { name: 'مرن' }, { name: 'موجه نحو الهدف' }
+      ],
+      languages: [
+        { name: 'العربية', level: 'لغة أم', proficiency: 100 },
+        { name: 'الإنجليزية', level: 'متقدم', proficiency: 85 },
+        { name: 'الألمانية', level: 'مبتدئ', proficiency: 20 },
+      ],
     },
     education: [
       {
@@ -152,10 +201,12 @@ export const content: Record<Language, Content> = {
         skills: 'المهارات',
         contact: 'اتصل',
       },
+      about: 'عني',
       careerAspiration: 'الطموح الوظيفي',
-      skills: 'المهارات',
-      technicalSkills: 'المهارات التقنية',
+      skills: 'المهارات والخبرات',
+      skillsSubheading: 'مجموعة أدوات شاملة لتطوير البرمجيات الحديثة',
       softSkills: 'المهارات الشخصية',
+      languages: 'اللغات',
       education: 'التعليم',
       generateResume: 'إنشاء سيرة ذاتية بالذكاء الاصطناعي',
       getInTouch: 'تواصل معي',
@@ -186,13 +237,27 @@ export const content: Record<Language, Content> = {
         p1: "Absolvent der Angewandten Informatik mit einer soliden Grundlage in Programmiersprachen und Softwarekonzepten.",
         p2: "Ich begeistere mich für mobile Programmierung und Spieleentwicklung mit Fokus auf benutzerfreundliche Anwendungen und innovative digitale Lösungen.",
         p3: "Begeistert vom lebenslangen Lernen und dem Bleiben an der Spitze der technologischen Fortschritte, möchte ich zu innovativen Teams beitragen und einen bedeutenden Einfluss auf die Tech-Branche ausüben.",
-        attributes: ["Problemlöser", "Schneller Lerner", "Teamplayer", "Kreativer Denker", "Detailorientiert", "Anpassungsfähig", "Neugierig", "Motiviert", "Analytisch", "Belastbar", "Aufgeschlossen", "Zielorientiert"]
     },
     careerAspiration:
       'Ein kompetenter Programmierer zu werden, der hochwertige Anwendungen und kreative Lösungen liefert, die technische Exzellenz mit benutzerzentriertem Design verbinden.',
     skills: {
-      technical: ['Flutter', 'JavaScript', 'React', 'Next.js', 'Node.js', 'TypeScript', 'GraphQL', 'PostgreSQL', 'Docker', 'AWS'],
-      soft: ['Problemlösung', 'Teamzusammenarbeit', 'Agile Methoden', 'Kommunikation', 'Kreativität'],
+      expertise: [
+        { title: 'Frontend-Entwicklung', items: ['HTML', 'CSS', 'JavaScript', 'Flutter', 'Responsive Design'] },
+        { title: 'Backend & Programmierung', items: ['PHP', 'Java', 'Python', 'Laravel', 'C++', 'C#'] },
+        { title: 'Mobile Entwicklung', items: ['Flutter (Dart)', 'Android Studio (Java)', 'Cross-Platform-Apps'] },
+        { title: 'Tools & Technologien', items: ['Git', 'Cisco Packet Tracer', 'MS Office', 'Ethernet Wiring'] },
+      ],
+      soft: [
+        { name: 'Teamarbeit' }, { name: 'Klare Kommunikation' }, { name: 'Problemlösung' },
+        { name: 'Schnelles Lernen' }, { name: 'Kreatives Denken' }, { name: 'Detailorientiert' },
+        { name: 'Anpassungsfähig' }, { name: 'Neugierig' }, { name: 'Motiviert' },
+        { name: 'Analytisch' }, { name: 'Belastbar' }, { name: 'Zielorientiert' }
+      ],
+      languages: [
+        { name: 'Arabisch', level: 'Muttersprache', proficiency: 100 },
+        { name: 'Englisch', level: 'Fortgeschritten', proficiency: 85 },
+        { name: 'Deutsch', level: 'Anfänger', proficiency: 20 },
+      ],
     },
     education: [
       {
@@ -207,10 +272,12 @@ export const content: Record<Language, Content> = {
         skills: 'Fähigkeiten',
         contact: 'Kontakt',
       },
+      about: 'Über mich',
       careerAspiration: 'Karriereziele',
-      skills: 'Fähigkeiten',
-      technicalSkills: 'Technische Fähigkeiten',
+      skills: 'Fähigkeiten & Kenntnisse',
+      skillsSubheading: 'Ein umfassendes Toolkit für die moderne Softwareentwicklung',
       softSkills: 'Soft Skills',
+      languages: 'Sprachen',
       education: 'Ausbildung',
       generateResume: 'KI-Lebenslauf erstellen',
       getInTouch: 'Kontakt aufnehmen',

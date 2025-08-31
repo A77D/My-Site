@@ -1,12 +1,13 @@
 import { Button } from '@/components/ui/button';
-import { Mail, Phone, ExternalLink, Briefcase, MapPin, Code, Zap, Globe, ChevronsRight, BrainCircuit, Users, Target, Rocket, GraduationCap, Award } from 'lucide-react';
-import type { Language } from '@/lib/content';
+import { Mail, Phone, Briefcase, MapPin, Code, Zap, Globe, ChevronsRight, BrainCircuit, Users, Target, Rocket, GraduationCap, Award, Database, Smartphone, Wrench, MessageCircle, Lightbulb, Zap as ZapIcon, Eye, TrendingUp, Shield, AtSign, Languages as LanguagesIcon, ChevronRight } from 'lucide-react';
+import type { Language, SoftSkill } from '@/lib/content';
 import { content } from '@/lib/content';
 import Link from 'next/link';
 import LanguageSwitcher from '@/components/language-switcher';
 import ResumeGenerator from '@/components/resume-generator';
 import { GithubIcon, LinktreeIcon } from '@/components/icons';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Progress } from '@/components/ui/progress';
 
 type PageProps = {
   searchParams?: {
@@ -20,19 +21,26 @@ const navLinks = [
   { href: '#contact', label: 'Contact' },
 ];
 
-const softSkillIcons: Record<string, React.ElementType> = {
-  'Problem Solving': Code,
-  'Fast Learner': Zap,
-  'Team Player': Users,
-  'Creative Thinker': BrainCircuit,
-  'Detail-Oriented': ChevronsRight,
+const softSkillIcons: Record<SoftSkill['name'], React.ElementType> = {
+  'Team Collaboration': Users,
+  'Clear Communication': MessageCircle,
+  'Problem Solving': Lightbulb,
+  'Fast Learning': ZapIcon,
+  'Creative Thinking': BrainCircuit,
+  'Detail-Oriented': Eye,
   Adaptable: Globe,
-  Curious: ChevronsRight,
+  Curious: AtSign,
   Motivated: Rocket,
-  Analytical: ChevronsRight,
-  Resilient: ChevronsRight,
-  'Open-Minded': ChevronsRight,
+  Analytical: TrendingUp,
+  Resilient: Shield,
   'Goal-Driven': Target,
+};
+
+const expertiseIcons: Record<string, React.ElementType> = {
+  'Frontend Development': Globe,
+  'Backend & Programming': Database,
+  'Mobile Development': Smartphone,
+  'Tools & Technologies': Wrench,
 };
 
 export default function Home({ searchParams }: PageProps) {
@@ -124,7 +132,7 @@ export default function Home({ searchParams }: PageProps) {
         <section id="about" className="py-24 bg-card/50">
           <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tight text-primary">About Me</h2>
+              <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tight text-primary">{c.headings.about}</h2>
               <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">{c.aboutMe.passion}</p>
             </div>
 
@@ -169,46 +177,86 @@ export default function Home({ searchParams }: PageProps) {
                 </Card>
               </div>
             </div>
-             <div className="mt-12">
-                <div className="flex flex-wrap gap-3 justify-center">
-                    {c.aboutMe.attributes.map((skill, index) => {
-                        const Icon = softSkillIcons[skill] || ChevronsRight;
-                        return (
-                            <div key={index} className="flex items-center gap-2 bg-background/50 border border-border rounded-full px-4 py-2 text-sm text-muted-foreground transition-colors hover:border-primary hover:text-primary">
-                                <Icon className="h-4 w-4 text-primary" />
-                                <span>{skill}</span>
-                            </div>
-                        );
-                    })}
-                </div>
-            </div>
           </div>
         </section>
 
         {/* Skills Section */}
         <section id="skills" className="py-24">
           <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tight text-primary">{c.headings.skills}</h2>
+            <div className="text-center mb-16">
+              <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">
+                <span className="bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">{c.headings.skills}</span>
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">{c.headings.skillsSubheading}</p>
             </div>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-2xl font-bold mb-4 text-center md:text-left">{c.headings.technicalSkills}</h3>
-                <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-                  {c.skills.technical.map(skill => (
-                    <div key={skill} className="bg-card border border-border rounded-full px-4 py-2 text-sm text-card-foreground">{skill}</div>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-4 text-center md:text-left">{c.headings.softSkills}</h3>
-                <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-                  {c.skills.soft.map(skill => (
-                    <div key={skill} className="bg-card border border-border rounded-full px-4 py-2 text-sm text-card-foreground">{skill}</div>
-                  ))}
-                </div>
-              </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+              {c.skills.expertise.map((exp, index) => {
+                const Icon = expertiseIcons[exp.title];
+                return (
+                  <Card key={index} className="bg-card/50 border-border/50 hover:border-primary transition-colors duration-300">
+                    <CardHeader>
+                      <div className="flex items-center gap-4">
+                        {Icon && <Icon className="h-8 w-8 text-primary" />}
+                        <CardTitle className="text-lg font-bold">{exp.title}</CardTitle>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2 text-muted-foreground">
+                        {exp.items.map((item, i) => (
+                          <li key={i} className="flex items-center gap-2">
+                            <ChevronRight className="h-4 w-4 text-primary" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+               <Card className="bg-card/50 border-border/50">
+                  <CardHeader className="flex-row items-center gap-4 space-y-0">
+                    <Users className="h-8 w-8 text-primary"/>
+                    <CardTitle className="text-primary text-lg font-bold">{c.headings.softSkills}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-4">
+                      {c.skills.soft.map((skill, index) => {
+                        const Icon = softSkillIcons[skill.name];
+                        return(
+                          <div key={index} className="flex items-center gap-2 bg-background/50 border border-border rounded-full px-4 py-2 text-sm text-muted-foreground">
+                            {Icon && <Icon className="h-5 w-5 text-primary"/>}
+                            <span>{skill.name}</span>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </CardContent>
+               </Card>
+               <Card className="bg-card/50 border-border/50">
+                  <CardHeader className="flex-row items-center gap-4 space-y-0">
+                    <LanguagesIcon className="h-8 w-8 text-primary"/>
+                    <CardTitle className="text-primary text-lg font-bold">{c.headings.languages}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                      <ul className="space-y-4">
+                        {c.skills.languages.map((lang, index) => (
+                          <li key={index}>
+                            <div className="flex justify-between items-center mb-1">
+                              <span className="font-semibold text-card-foreground">{lang.name}</span>
+                              <span className="text-sm text-muted-foreground">{lang.level}</span>
+                            </div>
+                            <Progress value={lang.proficiency} className="h-2 [&>div]:bg-primary" />
+                          </li>
+                        ))}
+                      </ul>
+                  </CardContent>
+               </Card>
+            </div>
+
           </div>
         </section>
 
