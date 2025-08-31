@@ -190,28 +190,35 @@ export default function Home({ searchParams }: PageProps) {
               <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">{c.headings.skillsSubheading}</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <div className="flex flex-wrap justify-center gap-8 mb-8">
               {c.skills.expertise.map((exp, index) => {
                 const Icon = expertiseIcons[exp.title];
                 return (
-                  <Card key={index} className="bg-card/50 border-border/50 hover:border-primary transition-colors duration-300">
-                    <CardHeader>
-                      <div className="flex items-center gap-4">
-                        {Icon && <Icon className="h-8 w-8 text-primary" />}
-                        <CardTitle className="text-lg font-bold">{exp.title}</CardTitle>
+                  <div key={index} className="skill-card">
+                    <div className="skill-card-content">
+                      <div className="back">
+                        <div className="back-content">
+                          {Icon && <Icon className="h-10 w-10 text-primary mb-2" />}
+                          <strong className="text-xl font-bold text-center">{exp.title}</strong>
+                        </div>
                       </div>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="space-y-2 text-muted-foreground">
-                        {exp.items.map((item, i) => (
-                          <li key={i} className="flex items-center gap-2">
-                            <ChevronRight className="h-4 w-4 text-primary" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
+                      <div className="front">
+                         <div className="front-content">
+                            <div className="flex-grow">
+                                <h3 className="text-lg font-bold text-primary mb-4">{exp.title}</h3>
+                                <ul className="space-y-2 text-sm text-left">
+                                  {exp.items.map((item, i) => (
+                                    <li key={i} className="flex items-center gap-2">
+                                      <ChevronRight className="h-4 w-4 text-primary shrink-0" />
+                                      <span>{item}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                            </div>
+                         </div>
+                      </div>
+                    </div>
+                  </div>
                 );
               })}
             </div>
