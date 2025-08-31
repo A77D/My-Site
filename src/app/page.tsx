@@ -166,17 +166,24 @@ export default function Home({ searchParams }: PageProps) {
                     </div>
                   </div>
                 </a>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="bg-transparent border-border hover:bg-accent hover:border-primary hover:text-primary transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--primary))]"
-                  asChild
-                >
-                  <a href={c.links.github} target="_blank" rel="noopener noreferrer">
-                    <Briefcase className="mr-2"/>
-                    {c.headings.viewProjects}
-                  </a>
-                </Button>
+                <a href={c.links.github} target="_blank" rel="noopener noreferrer" className="relative">
+                  <button className="new-real-button"></button>
+                  <div className="new-backdrop"></div>
+                  <div className="new-button-container">
+                    <div className="new-spin new-spin-blur"></div>
+                    <div className="new-spin new-spin-intense"></div>
+                    <div className="new-backdrop"></div>
+                    <div className="new-button-border">
+                      <div className="new-spin new-spin-inside"></div>
+                      <div className="new-button">
+                        <div className="flex items-center gap-2">
+                          <Briefcase />
+                          <span>{c.headings.viewProjects}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
               </div>
               
               <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
