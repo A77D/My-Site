@@ -73,6 +73,30 @@ export default function Home({ searchParams }: PageProps) {
           <clipPath id="squircleClip" clipPathUnits="objectBoundingBox">
             <path d="M 0,0.5 C 0,0 0,0 0.5,0 S 1,0 1,0.5 1,1 0.5,1 0,1 0,0.5"></path>
           </clipPath>
+          <filter width="300%" x="-100%" height="300%" y="-100%" id="unopaq">
+            <feColorMatrix
+              values="1 0 0 0 0 
+                      0 1 0 0 0 
+                      0 0 1 0 0 
+                      0 0 0 9 0"
+            ></feColorMatrix>
+          </filter>
+          <filter width="300%" x="-100%" height="300%" y="-100%" id="unopaq2">
+            <feColorMatrix
+              values="1 0 0 0 0 
+                      0 1 0 0 0 
+                      0 0 1 0 0 
+                      0 0 0 3 0"
+            ></feColorMatrix>
+          </filter>
+          <filter width="300%" x="-100%" height="300%" y="-100%" id="unopaq3">
+            <feColorMatrix
+              values="1 0 0 0.2 0 
+                      0 1 0 0.2 0 
+                      0 0 1 0.2 0 
+                      0 0 0 2 0"
+            ></feColorMatrix>
+          </filter>
         </defs>
       </svg>
       <div className="background-container"></div>
@@ -123,17 +147,25 @@ export default function Home({ searchParams }: PageProps) {
               
               <p className="max-w-2xl mx-auto text-muted-foreground leading-relaxed mb-8">{c.aboutMe.summary}</p>
 
-              <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-                <Button
-                  size="lg"
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_20px_hsl(var(--primary))] transition-all duration-300 transform hover:scale-105"
-                  asChild
-                >
-                  <a href="#contact">
-                    <Send className="mr-2" />
-                    {c.headings.getInTouch}
-                  </a>
-                </Button>
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
+                <a href="#contact" className="relative">
+                  <button className="new-real-button"></button>
+                  <div className="new-backdrop"></div>
+                  <div className="new-button-container">
+                    <div className="new-spin new-spin-blur"></div>
+                    <div className="new-spin new-spin-intense"></div>
+                    <div className="new-backdrop"></div>
+                    <div className="new-button-border">
+                      <div className="new-spin new-spin-inside"></div>
+                      <div className="new-button">
+                        <div className="flex items-center gap-2">
+                          <Send />
+                          <span>{c.headings.getInTouch}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
                 <Button
                   variant="outline"
                   size="lg"
