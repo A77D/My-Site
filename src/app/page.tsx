@@ -146,7 +146,7 @@ export default function Home({ searchParams }: PageProps) {
                       <div key={index} className={index > 0 ? 'mt-4' : ''}>
                         <h3 className="font-semibold text-card-foreground">{edu.degree}</h3>
                         <p className="text-muted-foreground">{edu.institution}</p>
-                        <p className="text-sm text-muted-foreground/80">{edu.year}</p>
+                        {edu.year && <p className="text-sm text-muted-foreground/80">{edu.year}</p>}
                         {edu.training && (
                           <div className="mt-2">
                             <h4 className="font-semibold text-sm text-card-foreground">Additional Training</h4>

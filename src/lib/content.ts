@@ -3,7 +3,7 @@ export type Language = 'en' | 'ar' | 'de';
 type Education = {
   degree: string;
   institution: string;
-  year: string;
+  year?: string;
   training?: string;
 };
 
@@ -88,7 +88,6 @@ export const content: Record<Language, Content> = {
       {
         degree: "Bachelor's in Applied Computing",
         institution: 'Palestine Technical University - Kadoorie (PTUK)',
-        year: '2018 - 2022',
         training: 'PHP Course • Python AI/ML • Multiple Online Courses'
       },
     ],
@@ -144,7 +143,6 @@ export const content: Record<Language, Content> = {
       {
         degree: 'بكالوريوس في الحوسبة التطبيقية',
         institution: 'جامعة فلسطين التقنية - خضوري',
-        year: '٢٠١٨ - ٢٠٢٢',
         training: 'دورة PHP • Python AI/ML • دورات متعددة عبر الإنترنت'
       },
     ],
@@ -200,7 +198,6 @@ export const content: Record<Language, Content> = {
       {
         degree: 'B.Sc. in Angewandter Informatik',
         institution: 'Palästinensische Technische Universität - Kadoorie (PTUK)',
-        year: '2018 - 2022',
         training: 'PHP-Kurs • Python AI/ML • Mehrere Online-Kurse'
       },
     ],
