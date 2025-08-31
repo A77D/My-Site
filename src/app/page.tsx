@@ -144,7 +144,7 @@ export default function Home({ searchParams }: PageProps) {
 
                 <div className="md:col-span-2 space-y-8">
                   <Card className="bg-background/50 border-border">
-                    <CardHeader className="flex-row items-center gap-4 space-y-0">
+                    <CardHeader className="flex-row items-center gap-4 space-y-0 pb-4">
                       <GraduationCap className="h-8 w-8 text-primary"/>
                       <CardTitle className="text-primary">{c.headings.education}</CardTitle>
                     </CardHeader>
@@ -153,10 +153,9 @@ export default function Home({ searchParams }: PageProps) {
                         <div key={index} className={index > 0 ? 'mt-4' : ''}>
                           <h3 className="font-semibold text-card-foreground">{edu.degree}</h3>
                           <p className="text-muted-foreground">{edu.institution}</p>
-                          {edu.year && <p className="text-sm text-muted-foreground/80">{edu.year}</p>}
                           {edu.training && (
-                            <div className="mt-2">
-                              <h4 className="font-semibold text-sm text-card-foreground">Additional Training</h4>
+                            <div className="mt-4">
+                              <h4 className="font-semibold text-card-foreground">Additional Training</h4>
                               <p className="text-sm text-muted-foreground">{edu.training}</p>
                             </div>
                           )}
@@ -166,12 +165,12 @@ export default function Home({ searchParams }: PageProps) {
                   </Card>
 
                   <Card className="bg-background/50 border-border">
-                    <CardHeader className="flex-row items-center gap-4 space-y-0">
+                    <CardHeader className="flex-row items-center gap-4 space-y-0 pb-4">
                       <Award className="h-8 w-8 text-primary"/>
                       <CardTitle className="text-primary">{c.headings.careerAspiration}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground">To become a <span className="text-primary">proficient programmer</span>, delivering high-quality applications and creative solutions that combine <span className="text-primary">technical excellence</span> with <span className="text-primary">user-centric design</span>.</p>
+                      <p className="text-muted-foreground">To become a <span className="text-primary font-semibold">proficient programmer</span>, delivering high-quality applications and creative solutions that combine <span className="text-primary font-semibold">technical excellence</span> with <span className="text-primary font-semibold">user-centric design</span>.</p>
                     </CardContent>
                   </Card>
                 </div>
@@ -233,6 +232,10 @@ export default function Home({ searchParams }: PageProps) {
                     </div>
                     <div className="front">
                       <div className="front-content p-6">
+                        <CardHeader className="flex-row items-center gap-4 space-y-0 p-0 mb-4">
+                          <Users className="h-8 w-8 text-primary"/>
+                          <CardTitle className="text-primary text-lg font-bold">{c.headings.softSkills}</CardTitle>
+                        </CardHeader>
                         <CardContent className="p-0">
                           <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4">
                             {c.skills.soft.map((skill, index) => {

@@ -3,7 +3,6 @@ export type Language = 'en' | 'ar' | 'de';
 type Education = {
   degree: string;
   institution: string;
-  year?: string;
   training?: string;
 };
 
