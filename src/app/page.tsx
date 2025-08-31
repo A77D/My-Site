@@ -103,7 +103,7 @@ export default function Home({ searchParams }: PageProps) {
                   className="bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_20px_hsl(var(--primary))] transition-all duration-300 transform hover:scale-105"
                   asChild
                 >
-                  <a href="#contact">
+                  <a href="#about">
                     <Send className="mr-2" />
                     {c.headings.getInTouch}
                   </a>
