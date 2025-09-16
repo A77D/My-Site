@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import React from 'react';
 import { FacebookIcon, InstagramIcon, XIcon, DiscordIcon } from '@/components/social-icons';
+import CurrentYear from '@/components/current-year';
 
 
 type PageProps = {
@@ -54,7 +55,7 @@ const socialLinks = [
   { name: 'Discord', icon: DiscordIcon, url: 'https://discord.gg/cjBpKjWUyr', gradient: 'from-indigo-600 to-indigo-800', border: 'border-indigo-500/50' },
 ];
 
-export default function Home({ searchParams }: PageProps) {
+export default async function Home({ searchParams }: PageProps) {
   const lang = searchParams?.lang || 'en';
   const c = content[lang];
   const dir = lang === 'ar' ? 'rtl' : 'ltr';
@@ -450,7 +451,7 @@ export default function Home({ searchParams }: PageProps) {
         </main>
 
         <footer className="py-6 text-center text-muted-foreground text-sm">
-          <p>&copy; {new Date().getFullYear()} {c.name}. All Rights Reserved.</p>
+          <p>&copy; <CurrentYear /> {c.name}. All Rights Reserved.</p>
         </footer>
       </div>
     </div>
