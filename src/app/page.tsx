@@ -8,7 +8,7 @@ import { GithubIcon, LinktreeIcon } from '@/components/icons';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import React from 'react';
-import { FacebookIcon, InstagramIcon, XIcon, DiscordIcon } from '@/components/social-icons';
+import { FacebookIcon, InstagramIcon, XIcon, DiscordIcon, ThreadsIcon, TikTokIcon, SnapchatIcon } from '@/components/social-icons';
 import CurrentYear from '@/components/current-year';
 
 
@@ -51,7 +51,10 @@ const socialLinks = [
   { name: 'LinkedIn', icon: (props: any) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>, url: 'https://www.linkedin.com/in/a7madjay2k/', gradient: 'from-blue-600 to-blue-800', border: 'border-blue-500/50' },
   { name: 'Facebook', icon: FacebookIcon, url: 'https://web.facebook.com/ahmad.jay2k/', gradient: 'from-blue-500 to-blue-700', border: 'border-blue-400/50' },
   { name: 'Instagram', icon: InstagramIcon, url: 'https://www.instagram.com/ja.a7mad/', gradient: 'from-pink-500 via-red-500 to-yellow-500', border: 'border-red-500/50' },
+  { name: 'Threads', icon: ThreadsIcon, url: 'https://www.threads.com/@ja.a7mad', gradient: 'from-gray-900 to-black', border: 'border-gray-700/50' },
   { name: 'X', icon: XIcon, url: 'https://x.com/a7madjay2k', gradient: 'from-gray-800 to-black', border: 'border-gray-700/50' },
+  { name: 'TikTok', icon: TikTokIcon, url: 'https://www.tiktok.com/@a7mad.jay2k', gradient: 'from-pink-600 to-red-600', border: 'border-pink-500/50' },
+  { name: 'Snapchat', icon: SnapchatIcon, url: 'https://www.snapchat.com/add/a7madjay2k', gradient: 'from-yellow-400 to-yellow-600', border: 'border-yellow-500/50' },
   { name: 'Discord', icon: DiscordIcon, url: 'https://discord.gg/cjBpKjWUyr', gradient: 'from-indigo-600 to-indigo-800', border: 'border-indigo-500/50' },
 ];
 
